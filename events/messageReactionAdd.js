@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 const pool  = mysql.createPool({
-    host            : '51.254.109.35',
-    user            : 'u1176_X2YBekD8Sb',
-    password        : 'YNNR@rK==h1RY2O.3RrTPUqC=T.0PdtXp',
-    port            : 3306,
-    database        : 's1176_support_bot'
+    host            : 'host',
+    user            : 'user',
+    password        : 'password',
+    port            : port,
+    database        : 'database'
 });
 module.exports = {
     event: "messageReactionAdd",
