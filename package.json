@@ -1,0 +1,21 @@
+{
+  "name": "g_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
+    "discordjs-prompter": "^2.0.4",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "remove": "^0.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Lartaxx",
+  "license": "ISC"
+}
