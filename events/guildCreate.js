@@ -3,7 +3,12 @@ moment.locale('fr');
 module.exports = {
     event: "guildCreate",
     once: false,
-    run(guild) {
+    async run(guild) {
+    let mute_role = await guild.roles.create({data: {name: "Muet | Mute", color: "WHITE"}});
+    let all_cats = guild.channels.cache.filter(cat => cat.type === "category");
+           all_cats.forEach(element => {
+               element.updateOverwrite(mute_role, {SEND_MESSAGES: false});
+           });
     let date = moment(guild.joinedTimestamp).format('LT');
      guild.members.cache.get(guild.ownerID).send({embed: {
         color: "#2F3136",

@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 const pool  = mysql.createPool({
-    host            : 'host',
-    user            : 'user',
-    password        : 'password',
-    port            : port,
-    database        : 'database'
+    host            : '127.0.0.1',
+    user            : 'root',
+    password        : '',
+    port            : 3308,
+    database        : 'support_bot'
 });
 module.exports = {
     event: "messageReactionAdd",
@@ -67,7 +67,7 @@ module.exports = {
            
         }
         else {
-            reaction.users.remove(user.id)
+            return;
         }   
     }
 };

@@ -1,3 +1,229 @@
 {
-    "token": "your token"
+    "token": "",
+
+    "colors": {
+        "errors": "#D42303",
+        "info": "#0368D4",
+        "success": "#58CD02",
+        "warning": "#E6D100"
+    },
+
+    "language_predefined": ["en", "fr"],
+
+    "language": {
+        "fr": {
+            "phrases": {
+                
+                "warn": {
+                    "errror_owner_own": "Vous ne pouvez pas vous avertir vous-même ou avertir le propriétaire du serveur !",
+                    "success_embed_title": "✅ | Succès !",
+                    "errors_embed_title": "❌ | Échec !",
+                    "success_embed_description": "Avertissement du membre %s a été effectué avec succès !",
+                    "errors_embed_description": "L'avertissement du membre %s a subi un échec ! \n Raison : %s",
+                    "warn_embed_user_title": "⚠️ | Vous avez été averti !",
+                    "warn_embed_user_description": "Vous avez été averti par %s pour la raison %s sur le serveur %s"
+                },
+
+                "unwarn": {
+                    "errors_embed_empty_description": "%s n'a pas d'avertissement !",
+                    "success_embed_title": "✅ | Succès !",
+                    "errors_embed_title": "❌ | Échec !",
+                    "success_embed_description": "%s a enlevé %d avertissements à %s !",
+                    "success_embed_field_title": "Raison :",
+                    "success_embed_footer": "Avertissements restants : %d",
+                    "errors_embed_description": "Vous ne pouvez pas enlever %d avertissements à %s sinon il sera à %d avertissements !"
+                },
+
+                "errors" :{
+                    "kick_me_or_owner": "Vous ne pouvez pas vous expulser vous-même ou expulser le propriétaire du serveur %s !",
+                    "ban_me_or_owner": "Vous ne pouvez pas vous bannir vous-même ou bannir le propriétaire du serveur %s !",
+                    "unban_me_or_owner": "Vous ne pouvez pas vous débannir ou débannir le propriétaire du serveur %s !",
+                    "user_not_found": "L'utilisateur n'a pas été trouvé !",
+                    "no_banned_users": "Aucun utilisateur a été banni(e) sur le serveur %s !"
+                },
+
+                "success": {
+                    "modify_language_sucess": "Le language %s a bien été définie comme votre langue principale sur votre serveur %s"
+                },
+
+                "help": {
+                    "title_embed": "Aide demandée par %s",
+                    "description_embed": "9 commandes sont disponibles ! \n\n __**Commandes Fun's**__ \n\n g!me : Permet de voir votre profil sur le serveur concerné \n g!server : Permet de voir les statistiques du serveur concerné \n g!user @user : Permet de voir le profil de l'utilisateur mentionné dans le servuer mentionné \n\n __**Commandes Principales**__ \n\n g!clear nomber : Permet de supprimer le nombre écrit de messages dans le channel où la commande est écrite \n g!help : Permet de voir toutes les commandes du bot \n g!modify_language langue : Permet de modifier la langue du bot \n g!unwarn @user nombre raison : Permet d'enlever un nombre x d'un utilisateur \n g!warn @user raison : Permet d'avertir un utilisateur \n\n __**Commande de setup**__ \n\n g!setup #channel_ticket langue : Permet de configurer le channel de ticket et de choisir la langue du bot ( par défaut : anglais )"
+                },
+
+                "mute": {
+                    "user_has_mute_role": "L'utilisateur %s a déjà le rôle %s !",
+                    "embed_title": "L'utilisateur %s a bien été mis sous silence !",
+                    "embed_description": "%s a mis sous silence %s !",
+                    "fields": {
+                        "title": "Modérateur :",
+                        "value": "%s",
+                        "title_two": "Raison :",
+                        "value_two": "%s"
+                    }
+                },
+
+                "unmute": {
+                    "user_hasnt_mute_role": "L'utilisateur %s n'a pas le rôle %s !",
+                    "embed_title": "Le droit de parole de %s a bien été rétablie !",
+                    "embed_description": "%s a rétablie le droit de parole de %s !",
+                    "fields": {
+                        "title": "Modérateur :",
+                        "value": "%s",
+                        "title_two": "Raison :",
+                        "value_two": "%s"
+                    }
+                },
+
+                "kick": {
+                    "embed_title": "%s a expulsé %s du serveur %s",
+                    "embed_description": "%s a été expulsé du serveur !",
+                    "fields": {
+                        "title": "Modérateur :",
+                        "value": "%s",
+                        "title_two": "Raison :",
+                        "value_two": "%s"
+                    },
+                    "user": {
+                        "embed_title": "Vous avez été expulsé !",
+                        "embed_description": "%s vous a expulsé du serveur %s!"
+                    }
+                },
+
+                "ban": {
+                    "embed_title": "%s a banni(e) %s du serveur %s",
+                    "embed_description": "%s a été banni(e) du serveur !",
+                    "fields": {
+                        "title": "Modérateur",
+                        "value": "%s",
+                        "title_two": "Raison :",
+                        "value_two": "%s"
+                    },
+                    "user": {
+                        "embed_title": "Vous avez été bannie(e) !",
+                        "embed_description": "%s vous a banni(e) du serveur %s !"
+                    }
+                },
+
+                "unban": {
+                    "first_title": "%s a débannie quelqu'un !",
+                    "embed_title": "%s a été débanni(e) du serveur %s",
+                    "embed_description": "%s a débanni(e) %s du serveur !",
+                    "fields": {
+                        "title": "Modérateur : ",
+                        "value": "%s"
+                    }
+                }
+            }
+        },
+
+        "en": {
+            "phrases": {
+
+                "warn": {
+                    "errror_owner_own": "You cannot warn yourself or the owner of the server!",
+                    "success_embed_title": "✅ | Success!",
+                    "errors_embed_title": "❌ | Failure!",
+                    "success_embed_description": "Warn of %s has been successfully completed!",
+                    "errors_embed_description": "The member warning %s has failed! \n Reason: %s",
+                    "warn_embed_user_title": "⚠️ | You have been warned!",
+                    "warn_embed_user_description": "You have been warned by %s for the reason %s on the server %s."
+                },
+
+                "unwarn": {
+                    "errors_embed_empty_description": "%s has no warning!",
+                    "success_embed_title": "✅ | Success!",
+                    "errors_embed_title": "❌ | Failure!",
+                    "success_embed_description": "%s removed %d warnings!",
+                    "success_embed_field_title": "Reason :",
+                    "success_embed_footer": "Remaining warnings : %d",
+                    "errors_embed_description": "You cannot remove %d warnings at %s otherwise it will be at %d warnings!"
+                },
+
+                "errors" :{
+                    "no_entries_in_database": "You have not configured your server!\nPlease ask %s to use the command g!setup",
+                    "bad_language": "Bad language please retry the commande with the language fr or en",
+                    "kick_me_or_owner": "You can't evict yourself or the owner of the server %s!",
+                    "ban_me_or_owner": "You cannot banish yourself or banish the owner of the server %s!",
+                    "unban_me_or_owner": "You can't unban yourself or unban the server owner %s!",
+                    "user_not_found": "The user was not found!",
+                    "no_banned_users": "No user has been banned on the server %s!"
+
+                    },
+
+                "success": {
+                    "modify_language_sucess": "The language %s has been defined as your main language on your server %s"
+                },
+
+                "help": {
+                    "title_embed": "Assistance requested by %s",
+                    "description_embed": "9 orders are available! \n\n __**Fun's commands**__ \n\n g!me : Allows you to view your profile on the concerned server \n g!server : Allows to see the statistics of the concerned server \n g!user @user : Allows to see the profile of the mentioned user in the mentioned server \n\n __**Main Command's**__ \n\n g!clear number: Allows to delete the written number of messages in the channel. \n g!help : Allows you to see all the commands of the bot \n g!modify_language language: Allows you to modify the language of the bot \n g!unwarn @user reason number: Allows to remove an x number from a user \n g!warn @user reason: Allows to warn a user \n\n __**Setup Command**__ \n\n g!setup #channel_ticket language: Allows you to configure the ticket channel and choose the bot language (default: English)."
+                },
+
+                "mute": {
+                    "user_has_mute_role": "The user %s already has the role %s!",
+                    "embed_title": "The %s user has been silenced!",
+                    "embed_description": "%s silenced %s!",
+                    "fields": {
+                        "title": "Moderator:",
+                        "value": "%s",
+                        "title_two": "Reason:",
+                        "value_two": "%s"
+                    }
+                },
+
+                "unmute": {
+                    "user_hasnt_mute_role": "The user %s does not have the role %s!",
+                    "embed_title": "The right to speak in %s has been restored!",
+                    "embed_description": "%s has restored %s right to speak!",
+                    "fields": {
+                        "title": "Moderator :",
+                        "value": "%s",
+                        "title_two": "Reason :",
+                        "value_two": "%s"
+                    }
+                },
+
+                "kick": {
+                    "embed_title": "%s expelled %s from server %s",
+                    "embed_description": "%s has been expelled from the server!",
+                    "fields": {
+                        "title": "Moderator :",
+                        "value": "%s",
+                        "title_two": "Reason:",
+                        "value_two": "%s"
+                    },
+                    "user": {
+                        "embed_title": "You have been evicted!",
+                        "embed_description": "%s kicked you off the %s server!"
+                    }
+                },
+
+                "ban": {
+                    "embed_title": "%s has banned %s from server %s",
+                    "embed_description": "%s has been banned from the server!",
+                    "fields": {
+                        "title": "Moderator",
+                        "value": "%s",
+                        "title_two": "Reason:",
+                        "value_two": "%s"
+                    },
+                    "user": {
+                        "embed_title": "You have been banned!",
+                        "embed_description": "%s banned you from the %s server !"
+                    }
+                },
+
+                "unban": {
+                    "first_title": "%s unbaned someone!",
+                    "embed_title": "%s has been unbanned from server %s",
+                    "embed_description": "%s a débanni(e) %s of the server!",
+                    "fields": {
+                        "title": "Moderator : ",
+                        "value": "%s"
+                    }
+                }
+            }
+        }
+    }
 }

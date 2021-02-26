@@ -1,11 +1,11 @@
 const { Command } = require('discord.js-commando');
 const mysql = require('mysql');
 const pool  = mysql.createPool({
-    host            : '51.254.109.35',
-    user            : 'u1176_X2YBekD8Sb',
-    password        : 'YNNR@rK==h1RY2O.3RrTPUqC=T.0PdtXp',
-    port            : 3306,
-    database        : 's1176_support_bot'
+    host            : '127.0.0.1',
+    user            : 'root',
+    password        : '',
+    port            : 3308,
+    database        : 'support_bot'
 });
 
 module.exports = class UserSearchCommand extends Command {
