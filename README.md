@@ -31,7 +31,7 @@
 You can add a language to send a mp in discord, **Lartaxx#8301**
 I sent to you, the english translation !, you can use this template and modify to your language, and sent your new translation in discord dm.
 ```json
- "en": {
+         "en": {
             "phrases": {
 
                 "warn": {
@@ -54,14 +54,15 @@ I sent to you, the english translation !, you can use this template and modify t
                     "errors_embed_description": "You cannot remove %d warnings at %s otherwise it will be at %d warnings!"
                 },
 
-                "errors" :{
+                "errors" : {
                     "no_entries_in_database": "You have not configured your server!\nPlease ask %s to use the command g!setup",
                     "bad_language": "Bad language please retry the commande with the language fr or en",
                     "kick_me_or_owner": "You can't evict yourself or the owner of the server %s!",
                     "ban_me_or_owner": "You cannot banish yourself or banish the owner of the server %s!",
                     "unban_me_or_owner": "You can't unban yourself or unban the server owner %s!",
                     "user_not_found": "The user was not found!",
-                    "no_banned_users": "No user has been banned on the server %s!"
+                    "no_banned_users": "No user has been banned on the server %s!",
+                    "feedback_error": "You have already sent your notice for the bot %s or you have not configured your server!"
 
                     },
 
@@ -136,6 +137,10 @@ I sent to you, the english translation !, you can use this template and modify t
                         "title": "Moderator : ",
                         "value": "%s"
                     }
+                },
+
+                "notice": {
+                    "thank_you_for_feedback": "Thanks for your feedback!"
                 }
             }
         }
