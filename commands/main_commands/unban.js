@@ -10,7 +10,7 @@ const pool  = mysql.createPool({
     database        : 'support_bot'
 });
 const {format} = require('util');
-module.exports = class BanCommand extends Command {
+module.exports = class UnbanCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'unban',

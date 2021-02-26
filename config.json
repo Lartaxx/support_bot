@@ -1,5 +1,5 @@
 {
-    "token": "",
+    "token": "Nzk5NDIxNjI5NjU0MjM3MTk0.YADVaQ.rvwch8mBTGKDLbvqZH0r2ilNcz8",
 
     "colors": {
         "errors": "#D42303",
@@ -34,12 +34,13 @@
                     "errors_embed_description": "Vous ne pouvez pas enlever %d avertissements à %s sinon il sera à %d avertissements !"
                 },
 
-                "errors" :{
+                "errors" : {
                     "kick_me_or_owner": "Vous ne pouvez pas vous expulser vous-même ou expulser le propriétaire du serveur %s !",
                     "ban_me_or_owner": "Vous ne pouvez pas vous bannir vous-même ou bannir le propriétaire du serveur %s !",
                     "unban_me_or_owner": "Vous ne pouvez pas vous débannir ou débannir le propriétaire du serveur %s !",
                     "user_not_found": "L'utilisateur n'a pas été trouvé !",
-                    "no_banned_users": "Aucun utilisateur a été banni(e) sur le serveur %s !"
+                    "no_banned_users": "Aucun utilisateur a été banni(e) sur le serveur %s !",
+                    "feedback_error": "Vous avez déjà envoyé votre avis pour le bot %s ou vous n'avez pas configuré votre serveur !"
                 },
 
                 "success": {
@@ -113,6 +114,10 @@
                         "title": "Modérateur : ",
                         "value": "%s"
                     }
+                },
+
+                "notice": {
+                    "thank_you_for_feedback": "Merci pour votre avis !"
                 }
             }
         },
@@ -140,14 +145,15 @@
                     "errors_embed_description": "You cannot remove %d warnings at %s otherwise it will be at %d warnings!"
                 },
 
-                "errors" :{
+                "errors" : {
                     "no_entries_in_database": "You have not configured your server!\nPlease ask %s to use the command g!setup",
                     "bad_language": "Bad language please retry the commande with the language fr or en",
                     "kick_me_or_owner": "You can't evict yourself or the owner of the server %s!",
                     "ban_me_or_owner": "You cannot banish yourself or banish the owner of the server %s!",
                     "unban_me_or_owner": "You can't unban yourself or unban the server owner %s!",
                     "user_not_found": "The user was not found!",
-                    "no_banned_users": "No user has been banned on the server %s!"
+                    "no_banned_users": "No user has been banned on the server %s!",
+                    "feedback_error": "You have already sent your notice for the bot %s or you have not configured your server!"
 
                     },
 
@@ -222,6 +228,10 @@
                         "title": "Moderator : ",
                         "value": "%s"
                     }
+                },
+
+                "notice": {
+                    "thank_you_for_feedback": "Thanks for your feedback!"
                 }
             }
         }
