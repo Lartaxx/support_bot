@@ -20,7 +20,7 @@
 ### - **g!kick** [*@user*] [*reason*], with this command you can kick a member of your guild!
 ### - **g!modify_language** [*language*], with this command you can change the main language of your guild!
 ### - **g!help**, with this command you show all the command's to use!
-
+### - **g!notice** [*feeback*] [*number <= 5 and > 1*], with this command you can sent to me your feedback about your usage of my bot !
 > Setup command
 ### - **g!setup** [*#ticket_channel*] [*language*], with this command you can configure the channel in which users will be able to react to create a ticket!
 
