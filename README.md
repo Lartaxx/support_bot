@@ -31,8 +31,7 @@
 You can add a language to send a mp in discord, **Lartaxx#8301**
 I sent to you, the english translation !, you can use this template and modify to your language, and sent your new translation in discord dm.
 ```json
-         "en": {
-            "phrases": {
+                 "en": {
 
                 "warn": {
                     "errror_owner_own": "You cannot warn yourself or the owner of the server!",
@@ -62,7 +61,10 @@ I sent to you, the english translation !, you can use this template and modify t
                     "unban_me_or_owner": "You can't unban yourself or unban the server owner %s!",
                     "user_not_found": "The user was not found!",
                     "no_banned_users": "No user has been banned on the server %s!",
-                    "feedback_error": "You have already sent your notice for the bot %s or you have not configured your server!"
+                    "feedback_error": "You have already sent your notice for the bot %s or you have not configured your server!",
+                    "not_config": "%s must configure the server so that you can notify a user!",
+                    "have_ticket": "You already have an active ticket: %s, please request deletion of it to create another one!",
+                    "category_already_exist": "The category is already created"
 
                     },
 
@@ -141,9 +143,31 @@ I sent to you, the english translation !, you can use this template and modify t
 
                 "notice": {
                     "thank_you_for_feedback": "Thanks for your feedback!"
-                }
+                },
+
+                "tickets": {
+                    "name": "ticket-of-%s",
+                    "embed_description": "Your ticket has been successfully created ! You can now chat with the server team *%s* To close your ticket, you can react with the emoji below.",
+                    "ticket_name": "ticket-of-%s",
+                    "user_ticket": "Your **%s** ticket has been closed by %s.",
+                    "user": "yourself",
+                    "setup_ticket": "To create a ticket, please react with the emoji below."
+            },
+
+            "user": {
+                "profile": "Profile of %s",
+                "desc": "Username : %s \nID : %d \nNumber of warning(s) : %d"
+            },
+
+            "server": {
+                "title": "__**%s**__",
+                "author": "Requested by %s",
+                "desc": "__**Discord information**__ : \n Owner: %s(%d) \nDiscord ID: %d \nNumber of members: %d \nNumber of warns made: %d"
+            },
+
+            "me": {
+                "title": "__**Information from %s**__",
+                "desc": "Username: %s \nTag: %s \nID: %d \nNumber of warnings :  %d"
             }
         }
-    }
-}
 ```
