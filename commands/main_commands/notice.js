@@ -1,15 +1,7 @@
 const { Command } = require('discord.js-commando');
 const config = require('../../config.json');
 const {format} = require('util');
-const mysql = require('mysql');
 const { MessageEmbed } = require('discord.js');
-const pool  = mysql.createPool({
-    host            : '127.0.0.1',
-    user            : 'root',
-    password        : '',
-    port            : 3308,
-    database        : 'support_bot'
-});
 module.exports = class NoticeCommand extends Command {
 	constructor(client) {
 		super(client, {
@@ -23,24 +15,26 @@ module.exports = class NoticeCommand extends Command {
 				{
 					key: "notice", 
 					type: "string",
-					prompt: "",
+					prompt: "Notice !",
 				},
                 {
 					key: "stars", 
 					type: "integer",
-					prompt: "",
+					prompt: "Your advise !",
                     validate: key => key >= 1 && key <= 5
 				}
 			]
 		});
+        this.pool = client.options.pool;
     }
     
     run(message, {notice, stars}) {
+        let pool = this.pool;
         let owner_bot = this.client.guilds.cache.get("789808009613672448");
         let name_bot = this.client.user.username;
-        pool.query(`SELECT * FROM guilds WHERE guild_id = ${message.guild.id}`, function(err, results) {
+        this.pool.query(`SELECT * FROM guilds WHERE guild_id = ${message.guild.id}`, function(err, results) {
             if (err) throw err;
-            if(!results[0] || results[0].feedback !== "1") return message.author.send(format(config.language[results[0] ? results[0].language : "en"].phrases.errors.feedback_error, name_bot));
+            if(!results[0] || results[0].feedback === 1) return message.author.send(format(config.language[results[0] ? results[0].language : "en"].errors.feedback_error, name_bot));
             let emojis = "";
             for ( let i = 0; i < stars; i++ ) {
                 emojis += "⭐"; 
@@ -54,8 +48,8 @@ module.exports = class NoticeCommand extends Command {
                     {name: "Note :", value: emojis, inline: true}
                 )
                 .setTimestamp();
-                owner_bot.channels.cache.get("814631871736184853").send(embed_notice);
-                message.author.send(config.language[results[0] ? results[0].language : "en"].phrases.notice.thank_you_for_feedback);
+                owner_bot.channels.cache.get("818932323952099399").send(embed_notice);
+                message.author.send(config.language[results[0] ? results[0].language : "en"].notice.thank_you_for_feedback);
                 pool.query(`UPDATE guilds SET feedback = 1 WHERE guild_id = ${message.guild.id}`, function(err) {if(err) throw err;});
         })
        

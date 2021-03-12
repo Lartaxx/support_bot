@@ -1,13 +1,6 @@
 const { Command } = require('discord.js-commando');
-const mysql = require('mysql');
-const pool  = mysql.createPool({
-    host            : '127.0.0.1',
-    user            : 'root',
-    password        : '',
-    port            : 3308,
-    database        : 'support_bot'
-});
-
+const { format } = require('util');
+const config = require('../../config.json');
 module.exports = class ServerInfosCommand extends Command {
 	constructor(client) {
 		super(client, {
@@ -17,24 +10,29 @@ module.exports = class ServerInfosCommand extends Command {
 			memberName: 'server',
 			description: 'Voir les informations du serveur'
 		});
+        this.pool = client.options.pool;
     }
     
     run(message) {
-        pool.query(`SELECT * FROM guilds WHERE guild_id = ${message.guild.id}`, function(error, results) {
+        const pool = this.pool;
+        this.pool.query(`SELECT * FROM guilds WHERE guild_id = ${message.guild.id}`, function(error, results) {
             if (error) throw error;
+            pool.query(`SELECT language FROM guilds WHERE guild_id = ${message.guild.id}`, function(err, lang) {
+                if (err) throw err;
             message.channel.send({embed: {
-                color: "#2F3136",
-                title: `__**${message.guild.name}**__`,
+                color: config.colors.info,
+                title: format(config.language[lang[0] ? lang[0].language : "en"].server.title, message.guild.name),
                 author: {
-                    name: `Demandé par ${message.author.tag}`,
+                    name: format(config.language[lang[0] ? lang[0].language : "en"].server.author, message.author.tag),
                     icon_url: `${message.author.avatarURL({dynamic: true})}`
                 },
                 thumbnail: {
                     url: message.guild.iconURL({dynamic: true}),
                 },
-                description: `__**Informations du discord**__ : \n\n Propriétaire : ${message.guild.owner}(${message.guild.ownerID}) \n ID du Discord : ${message.guild.id} \n Nombre de membres : ${message.guild.memberCount} \n Nombre de warns effectués : ${results[0] ? results[0].total_warns : 0}`,
+                description: format(config.language[lang[0] ? lang[0].language : "en"].server.desc, message.guild.owner, message.guild.ownerID, message.guild.id, message.guild.memberCount, results[0] ? results[0].total_warns : 0),
                 timestamp: new Date()
-            }})
+                }})
+            })
         })
         
     }}

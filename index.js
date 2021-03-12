@@ -2,9 +2,18 @@ const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
 const config = require('./config.json');
 const fs = require('fs');
+const mysql = require('mysql');
+const pool  = mysql.createPool({
+    host            : '51.254.109.35',
+    user            : 'u1101_UIzjT4Q0Pm',
+    password        : 'klY3w@N5@P3QPRtXSEWwF7Fr',
+    port            : 3306,
+    database        : 's1101_lartaxx'
+});
 const client = new CommandoClient({
 	commandPrefix: 'g!',
     owner: '332514331516207105',
+    pool,
     partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 

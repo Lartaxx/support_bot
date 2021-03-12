@@ -1,13 +1,6 @@
 const { Command } = require('discord.js-commando');
-const mysql = require('mysql');
-const pool  = mysql.createPool({
-    host            : '127.0.0.1',
-    user            : 'root',
-    password        : '',
-    port            : 3308,
-    database        : 'support_bot'
-});
-
+const {format} = require('util');
+const config = require('../../config.json');
 module.exports = class UserSearchCommand extends Command {
 	constructor(client) {
 		super(client, {
@@ -26,21 +19,27 @@ module.exports = class UserSearchCommand extends Command {
                 }
             ]
 		});
+        this.pool = client.options.pool;
     }
     
     run(message, {searchuser}) {
+        const pool = this.pool;
         if (!searchuser) return message.channel.send('Veuillez mentionner un membre valide');
-        pool.query(`SELECT * FROM warns WHERE guild_id = ${message.guild.id} AND user_id = ${searchuser.id}`, function(error, results) {
+        this.pool.query(`SELECT * FROM warns WHERE guild_id = ${message.guild.id} AND user_id = ${searchuser.id}`, function(error, results) {
+            let nbr_warn = results[0] ? results[0].nbr_warn : 0;
             if (error) throw error;
-            message.channel.send({embed: {
-                color: "#2F3136",
-                title: `Profil de : ${searchuser.username}`,
-                description: `Pseudo : ${searchuser.username} \n ID : ${searchuser.id} \n Nombre d'avertissement(s) : ${results[0] ? results[0].nbr_warn : 0}`,
-                thumbnail: {
-                    url: searchuser.avatarURL({dynamic: true}),
-                },
-                timestamp: new Date()
-            }}) 
+                pool.query(`SELECT language FROM guilds WHERE guild_id = ${message.guild.id}`, function(err, lang) {
+                    if (err) throw err;
+                    message.channel.send({embed: {
+                        color: config.colors.info,
+                        title: format(config.language[lang[0] ? lang[0].language : "en"].user.profile, searchuser.username),
+                        description: format(config.language[lang[0] ? lang[0].language : "en"].user.desc, searchuser.username, searchuser.id, nbr_warn),
+                        thumbnail: {
+                            url: searchuser.displayAvatarURL(),
+                        },
+                        timestamp: new Date()
+                    }}) 
+                })
         })
     }
 }
