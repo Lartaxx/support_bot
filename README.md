@@ -31,7 +31,7 @@
 You can add a language to send a mp in discord, **Lartaxx#8301**
 I sent to you, the english translation !, you can use this template and modify to your language, and sent your new translation in discord dm.
 ```json
-                 "en": {
+         "en": {
 
                 "warn": {
                     "errror_owner_own": "You cannot warn yourself or the owner of the server!",
